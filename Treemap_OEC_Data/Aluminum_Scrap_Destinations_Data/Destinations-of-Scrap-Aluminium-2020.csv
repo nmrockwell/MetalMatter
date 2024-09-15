@@ -1,0 +1,17 @@
+Continent ID,Continent,Country ID,Country,ISO 3,Trade Value,Export Trade Value (in MMs of dollars),Year
+as,Asia,asare,United Arab Emirates,are,40000,0.04,2020
+as,Asia,aschn,China,chn,2668899.0000000005,2.668899,2020
+as,Asia,ashkg,Hong Kong,hkg,75292,0.075292,2020
+as,Asia,asidn,Indonesia,idn,503589,0.503589,2020
+as,Asia,asind,India,ind,4956161,4.956161,2020
+as,Asia,asjpn,Japan,jpn,1172761,1.172761,2020
+as,Asia,askor,South Korea,kor,20288908,20.288908,2020
+as,Asia,asmys,Malaysia,mys,2862919.0000000005,2.862919,2020
+as,Asia,assau,Saudi Arabia,sau,223328,0.223328,2020
+as,Asia,assgp,Singapore,sgp,37654,0.037654,2020
+as,Asia,astha,Thailand,tha,235190.99999999997,0.235191,2020
+as,Asia,astur,Turkey,tur,27083.000000000004,0.027083,2020
+as,Asia,asvnm,Vietnam,vnm,1454348,1.454348,2020
+as,Asia,asxxb,Taiwan,,7680816,7.680816,2020
+eu,Europe,eubel,Belgium,bel,15783,0.015783,2020
+eu,Europe,eudeu,Germany,deu,25831.999999999996,0.025832,2020

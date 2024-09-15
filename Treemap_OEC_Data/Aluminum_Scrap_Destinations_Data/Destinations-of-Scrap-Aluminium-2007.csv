@@ -1,0 +1,18 @@
+Continent ID,Continent,Country ID,Country,ISO 3,Trade Value,Export Trade Value (in MMs of dollars),Year
+af,Africa,afken,Kenya,ken,40028,0.040028,2007
+an,Antarctica,anatf,French South Antarctic Territory,atf,9932,0.009932,2007
+as,Asia,asare,United Arab Emirates,are,89426,0.089426,2007
+as,Asia,aschn,China,chn,76167777.99999999,76.167778,2007
+as,Asia,ashkg,Hong Kong,hkg,192000,0.192,2007
+as,Asia,asidn,Indonesia,idn,1540809,1.540809,2007
+as,Asia,asind,India,ind,591400,0.5914,2007
+as,Asia,asjpn,Japan,jpn,5904529,5.904529,2007
+as,Asia,askor,South Korea,kor,29008160,29.00816,2007
+as,Asia,asmys,Malaysia,mys,16164463,16.164463,2007
+as,Asia,aspak,Pakistan,pak,263,0.000263,2007
+as,Asia,assgp,Singapore,sgp,1350342.9999999998,1.350343,2007
+as,Asia,astha,Thailand,tha,1862619,1.862619,2007
+as,Asia,astur,Turkey,tur,6300,0.0063,2007
+as,Asia,asxxb,Taiwan,,432037,0.432037,2007
+eu,Europe,euesp,Spain,esp,11482.000000000002,0.011482,2007
+na,North America,nausa,United States,usa,14000,0.014,2007

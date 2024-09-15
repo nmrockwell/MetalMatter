@@ -1,0 +1,19 @@
+Continent ID,Continent,Country ID,Country,ISO 3,Trade Value,Export Trade Value (in MMs of dollars),Year
+as,Asia,asbhr,Bahrain,bhr,304320,0.30432,2018
+as,Asia,aschn,China,chn,18002936,18.002936,2018
+as,Asia,ashkg,Hong Kong,hkg,47395,0.047395,2018
+as,Asia,asidn,Indonesia,idn,228388,0.228388,2018
+as,Asia,asind,India,ind,12497735,12.497735,2018
+as,Asia,asjpn,Japan,jpn,2263500,2.2635,2018
+as,Asia,askor,South Korea,kor,23863623,23.863623,2018
+as,Asia,asmys,Malaysia,mys,7209974,7.209974,2018
+as,Asia,asnpl,Nepal,npl,566665.9999999999,0.566666,2018
+as,Asia,aspak,Pakistan,pak,55783,0.055783,2018
+as,Asia,assau,Saudi Arabia,sau,266967,0.266967,2018
+as,Asia,assgp,Singapore,sgp,110111,0.110111,2018
+as,Asia,astha,Thailand,tha,1114596,1.114596,2018
+as,Asia,astur,Turkey,tur,325179.00000000006,0.325179,2018
+as,Asia,asvnm,Vietnam,vnm,740497,0.740497,2018
+as,Asia,asxxb,Taiwan,,3976387,3.976387,2018
+eu,Europe,eugrc,Greece,grc,230264,0.230264,2018
+eu,Europe,euita,Italy,ita,86142.00000000001,0.086142,2018

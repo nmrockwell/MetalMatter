@@ -1,0 +1,17 @@
+Continent ID,Continent,Country ID,Country,ISO 3,Export Trade Value,Export Trade Value (in MMs of dollars),Year,Country_and_Value,TBD
+as,Asia,asare,United Arab Emirates,are,50000,0.05,2022,United Arab Emirates,0.05
+as,Asia,asbgd,Bangladesh,bgd,69760,0.06976,2022,Bangladesh,0.06976
+as,Asia,aschn,China,chn,38758381,38.758381,2022,China,38.758381
+as,Asia,ashkg,Hong Kong,hkg,683303,0.683303,2022,Hong Kong,0.683303
+as,Asia,asind,India,ind,8841461,8.841461,2022,India,8.841461
+as,Asia,asjpn,Japan,jpn,1930483,1.930483,2022,Japan,1.930483
+as,Asia,askor,South Korea,kor,47095217.00000001,47.095217,2022,South Korea,47.095217
+as,Asia,asmys,Malaysia,mys,3360095.9999999995,3.360096,2022,Malaysia,3.360096
+as,Asia,asnpl,Nepal,npl,495394,0.495394,2022,Nepal,0.495394
+as,Asia,aspak,Pakistan,pak,38000,0.038,2022,Pakistan,0.038
+as,Asia,assgp,Singapore,sgp,64382.99999999999,0.064383,2022,Singapore,0.064383
+as,Asia,astha,Thailand,tha,3508602.0000000005,3.508602,2022,Thailand,3.508602
+as,Asia,asvnm,Vietnam,vnm,722461,0.722461,2022,Vietnam,0.722461
+as,Asia,asxxb,Taiwan,,5639543.000000001,5.639543,2022,Taiwan,5.639543
+eu,Europe,eubel,Belgium,bel,20063,0.020063,2022,Belgium,0.020063
+eu,Europe,euesp,Spain,esp,14122,0.014122,2022,Spain,0.014122

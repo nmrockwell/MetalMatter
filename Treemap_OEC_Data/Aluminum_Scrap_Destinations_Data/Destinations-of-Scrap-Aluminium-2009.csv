@@ -1,0 +1,12 @@
+Continent ID,Continent,Country ID,Country,ISO 3,Trade Value,Export Trade Value (in MMs of dollars),Year
+as,Asia,aschn,China,chn,29763475,29.763475,2009
+as,Asia,ashkg,Hong Kong,hkg,1385485,1.385485,2009
+as,Asia,asidn,Indonesia,idn,1856244,1.856244,2009
+as,Asia,asind,India,ind,12000,0.012,2009
+as,Asia,asjpn,Japan,jpn,1777787,1.777787,2009
+as,Asia,askor,South Korea,kor,12461396,12.461396,2009
+as,Asia,asmys,Malaysia,mys,11329366.000000002,11.329366,2009
+as,Asia,assgp,Singapore,sgp,256469,0.256469,2009
+as,Asia,astha,Thailand,tha,950688,0.950688,2009
+as,Asia,asxxb,Taiwan,,397279,0.397279,2009
+na,North America,nausa,United States,usa,130574.99999999999,0.130575,2009
