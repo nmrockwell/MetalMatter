@@ -171,7 +171,6 @@ server <- function(input, output, session) {
     #========================================================================================================
     #=================== MRF Leaflet Map Output  -- START ===============================================
     
-    # Preview of first 15 entries on starting page:
 
     
     
