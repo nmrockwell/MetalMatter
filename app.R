@@ -170,11 +170,62 @@ server <- function(input, output, session) {
     
     #========================================================================================================
     #=================== MRF Leaflet Map Output  -- START ===============================================
-    
 
+    # First, we'll import our materials--that is, the shapefiles and the map "pop-up" information"
+    MRF_datapoints <-as.data.frame(read.csv(file="file path to MRF_Points.csv", header=TRUE, sep=","))
     
-    
-    
+        MRF_datapoints_selected <- MRF_datapoints[1:133,]
+       
+    # Import shapefile as SF object:
+    shp <- st_read("file path to Quezon_Shapefile.shp")
+        
+    # Convert from WGS 84/UTM zone 51N to Long/Lat:
+    shp_wgs84 <- st_transform(shp, crs = 4326)
+
+    # Adding labels to points of interest:
+    MRF_datapoints_selected$label <- paste("<p>", "<u>City or Municipality</u> = ", MRF_datapoints_selected$"City.or.Municipality","</p>",
+                                           "<p>", "<u>Barangay</u> = ", MRF_datapoints_selected$"Barangay", "</p>",
+                                           "<p>", "<u>Status</u> = ", MRF_datapoints_selected$"Status", "</p>",
+                                           "<p>", "<u>Latitude</u> = ", MRF_datapoints_selected$"lat", "</p>",
+                                           "<p>", "<u>Longitude</u> = ", MRF_datapoints_selected$"lon", "</p>",
+                                           "<p>", "<u>Address</u> = ", MRF_datapoints_selected$"Address", "</p>",
+                                           "<p>", "<u>Confirmed MRF coordinates?</u> = ", MRF_datapoints_selected$"Confirmed.MRF.Coordinates", "</p>",
+                                           sep="")
+        
+        # Generating CSS for map title:
+        tag.map.title <- tags$style(HTML("
+            .leaflet-control.map-title {
+            transform: translate(-50%,20%);
+            position: fixed !important;
+            left: 50%;
+            text-align: center;
+            color: rgb(175, 225, 175);
+            padding-left: 10px;
+            padding-right: 10px;
+            background: rgba(255,255,255);
+            font-weight: bold;
+            font-size: 26px;
+            }
+        "))
+
+    #Map creation
+    output$MRF_leaflet_map <- renderLeaflet({  
+        leaflet(shp_wgs84) |>
+            setView(lng = 121.043861, lat = 14.676208, zoom = 11) |>
+            addTiles() |>
+            addPolygons(color = "darkturquoise") |>
+            #addControl(title, position = "topleft", className="map-title") |>
+            addCircleMarkers(lng = MRF_datapoints_selected$"lon",
+                            lat = MRF_datapoints_selected$"lat",
+                            color = "darkorange",
+                            weight = 5,
+                            radius = 3,
+                            opacity = .90,
+                            label = lapply(MRF_datapoints_selected$label, HTML),
+                            clusterOptions = markerClusterOptions()) |>
+            addLogo("Mapping_Logo_GrayBG_4.svg", src=c("remote"), position = c("topright"), offset.x = -1, offset.y = -72, width = 300, height = 300)
+      })
+
     
     #=================== MRF Leaflet Map Output -- END =================================================
     #========================================================================================================
