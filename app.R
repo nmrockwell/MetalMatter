@@ -98,7 +98,10 @@ ui <- dashboardPage(
             ),
             
             tabItem(tabName = "Calendar",
-        
+                           HTML("<center><h3>An Overview of <q>Phase 1</q> Plans</h3></center>"), 
+                    br(), 
+                    tags$img(src = "Gantt_Screenshot_(Updated_05-05-2024).JPG", width = "100%"),
+                    br(), 
             ),
             
             
