@@ -201,7 +201,10 @@ ui <- dashboardPage(
             ),
             
             tabItem(tabName = "Stakeholders",
-
+        HTML("<center><h3>Customers & Stakeholders for This Project</h3></center>"), 
+                    br(), 
+                    tags$img(src = "Metal Matter - Stakeholders.png", width = "100%"),
+                    br(),
             ),
             
             tabItem(tabName = "Visit"),
