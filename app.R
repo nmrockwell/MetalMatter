@@ -178,7 +178,6 @@ ui <- dashboardPage(
                     p(style="text-indent: 40px;", "As this project develops, we hope to see the recycled aluminum used to create higher-value products (such as functional facades for building envelopes or living / green walls). Therefore, an understanding of the environment in which these components would be used is integral."), 
                     br(),
 
-```
                     
                     
             ),
