@@ -209,7 +209,18 @@ ui <- dashboardPage(
             
             tabItem(tabName = "Visit"),
             tabItem(tabName = "About",
-
+  HTML("<center><h2>About This R Shiny Web App</h2></center>"),
+                    br(), 
+                    
+                      HTML("<center><h4>This R Shiny web application was developed over the spring 2024 semester to help outline the basis for the GSIF Philippines MetalMatter's fieldwork approach for summer 2024.</h4></center>"), 
+                      HTML("<center><h4>Advisors of the 2024 MetalMatter team include:</h4></center>"),
+                      br(), 
+                      br(), 
+                      HTML("<center><li>Dr. Wojciech Z. Misiolek, Director of The Loewy Institute and Loewy Professor, MSE</li></center>"),
+                      br(), 
+                      HTML("<center><li>Dr. Charles Chemale Yurgel, Loewy Post-Doctoral Research Associate, MSE</li></center>"),
+                      br(), 
+                      HTML("<center><li>Nick Rockwell, Loewy Research Scientist, MSE</li></center>")
                     
             )
             
