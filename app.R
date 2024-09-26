@@ -187,7 +187,10 @@ ui <- dashboardPage(
             ),
             
             tabItem(tabName = "P1Costs",
-
+     HTML("<center><h3><q>Phase 1</q> BOM (Labor Costs To Be Determined)</h3></center>"), 
+                    br(), 
+                    tags$img(src = "BOM_(Updated_5-5-2024).JPG", width = "100%"),
+                    br(),
             ),
             
             tabItem(tabName = "Process",
