@@ -194,7 +194,10 @@ ui <- dashboardPage(
             ),
             
             tabItem(tabName = "Process",
-
+       HTML("<center><h3>Phase 1 Process Diagram</h3></center>"), 
+                    br(), 
+                    tags$img(src = "Metal_Matter-Phase_1_Process_Diagram.png", width = "100%"),
+                    br(),
             ),
             
             tabItem(tabName = "Stakeholders",
