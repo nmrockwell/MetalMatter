@@ -107,8 +107,35 @@ ui <- dashboardPage(
             
             tabItem(tabName = "Dashboard",
                     fluidPage(
-                        
-                        
+                        br(), 
+                        HTML("<center><h3>Beginning Spring 2024, the <a href='https://creativeinquiry.lehigh.edu/philippines-transforming-metal-recycling-landscape'>GSIF Philippines Metals Recycling team</a>, <em>MetalMatter</em>, has joined The Loewy Institute to Transform the Metal Recycling Landscape in Metro Manila</h3></center>"), 
+                        tags$img(src = "GSIF_MetalMatter_Team_Loewy_Blog_Intro_Banner_Image.PNG", width = "100%"), 
+                        br(), 
+                        br(), 
+                        p(style="text-indent: 40px;", "As of the spring 2024 semester, four Lehigh University undergraduate student researchers--Priya Blaise ('27, Mechanical Engineering), Ayushka Dhakal ('27, IDEAS), Cherrie Ruan ('27, Civil Engineering), and Kat Van Buskirk ('27, Architecture)--have joined The Loewy Institute as Global Social Impact Fellow (GSIF) to form the MetalMatter team."), 
+                        br(), 
+                        p(style="text-indent: 40px;", "These students have been actively researching various metal-forming techniques in the context of energy usage and carbon emissions, and working with a group of students at University of the Philippines Diliman enrolled in the HEED (Humanitatian, Engineering, Entrepreneurship, and Design) course to identify potential improvements for metals recycling in Metro Manila."), 
+                        br(), 
+                        p(style="text-indent: 40px;", "Currently, the students are looking into the possibility of using the friction extrusion technology ShAPE™ (developed at Pacific Northwest National Laboratory) to develop green (also known as \"living\" walls and functional building facades from recycled 6000 series aluminum alloys."), 
+                        br(), 
+                        p(style="text-indent: 40px;", "Over summer 2024, the students will conduct fieldwork in Metro Manila, during which they will collect scrap 6000 series aluminum. This scrap aluminum will be cast into small billets which will then be run through the ShAPE™ machine at PNNL to produce thin-walled cylindrical tubing. This tubing will then undergo metallography performed at Lehigh University to examine the mechanical properties of the material and further assess its use case as a material for living walls and functional facades in Metro Manila."),
+                        br(), 
+                        br(), 
+                        br(), 
+                        HTML("<center><h4>Partners:</h4></center>"), 
+                        HTML("<center><li><a href='https://www.lehighloewyinstitute.org/'>The Loewy Institute at Lehigh University</a></li></center>"),
+                        br(), 
+                        HTML('<center><img src="Loewy_Institute_Logo.jpg"</center>'),
+                        br(),
+                        br(),
+                        HTML("<center><li><a href='https://www.pnnl.gov/shape/'>Pacific Northwest National Laboratory's ShAPE™ Team</a></li></center>"), 
+                        br(),
+                        HTML('<center><img src="PNNL_Logo.jpg"</center>'),
+                        br(),
+                        br(),
+                        HTML("<center><li><a href='https://upd.edu.ph/'>University of Philippines Diliman</a></li></center>"),
+                        br(),
+                        HTML('<center><img src="UDP_Logo.jpg"</center>')                         
                     )
                     
       
