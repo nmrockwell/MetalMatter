@@ -94,7 +94,60 @@ ui <- dashboardPage(
             ),
             
             tabItem(tabName = "Emissions",
+                    HTML("<center><h3>Calculate Emissions Based off of Mining for Bauxite from Visayas Region Mines</h3></center>"),
+                    br(),
+                    p(style="text-indent: 40px;", "New aluminum production involves the mining of bauxite, the most frequently used ore of aluminum. Production of 1 metric ton of aluminum can use 4 to 5 metric tons of bauxite: "),
+                    br(),
+                    HTML("<center><strong><a href='https://www.grida.no/resources/5848'>Bauxite Tonnage Resource</a></strong></center>"),
+                    br(),
+                    p(style="text-indent: 40px;", "Furthermore, the production of 1 metric ton of aluminum outputs--according to the global average--11.7 tons of CO2."),
+                    br(),
+                    HTML("<center><strong><a href='https://www.wesa.fm/development-transportation/2017-08-31/aluminum-production-leaves-a-big-carbon-footprint-so-alcoa-is-adapting-with-sustainable-products'>CO2 Emissions for 1 Metric Ton of Aluminum</a></strong></center>"),
+                    br(),
+                    p(style="text-indent: 40px;", "As countries and industries look to greatly reduce their climate emissions, multiple considerations are made; metal-forming processes are no exception. Where large deposits of minerals / natural resources can be a windfall for a national economy, they can also present difficult considerations. In the case of the Philippines, for example, the Vasayas region is found to have a decent amount of bauxite that could be mined for aluminum production: "),
+                    br(),
+                    p(style="text-indent: 40px;", "The MetalMatter team reached out to the Philippines' Department of Environment and Natural Resources Mines and Geosciences Bureau regarding data about potential bauxite deposits--the following data was provided regarding the Vasayas region:"),
+                    br(),
+                    HTML('<center><img src="Bauxite_Resources.png", width="75%"></center>'),
+                    br(),
+                    p(style="text-indent: 40px;", "Using this data, the below sliders can be moved to estimate the CO2 produced for a given amount of bauxite mined and used for aluminum production. Once you have selected a tonnage of bauxite to hypothetically mine from the Vasayas region, use the next slider to select the amount of bauxite you would use for the production of a ton of aluminum (in that 4 to 5 tons range). Once you have made these selections, press the \"Calculate Emissions\" button; the resulting output will be shown below."),
+                    br(),
+                 
+                    sliderInput("m_bauxite", # "m" standing for "mineable" (not sure that's a word)
+                                label = "Bauxite Mined from Vasayas (in metric tons)",
+                                value = 175,
+                                min = 1,
+                                max = 177881000,
+                                width = "100%"),
+                    br(),
+                    sliderInput("u_bauxite", # "u" standing for "used"--takes 4-5 tons of bauxite for 1 ton of aluminum
+                                label = "Amount of bauxite used (in metric tons)",
+                                value = 4.5,
+                                min = 4,
+                                step = 0.5,
+                                max = 5,
+                                width = "100%"),
+                    br(),
+                    column(
+                      12,
+                    actionButton("submitbutton",
+                                 "Calculate Emissions",
+                                 class = "btn btn-primary"),
+                    align = "center"
+                    ),
+                    br(),
+                    tags$label(h3('Estimated Outcome')), # Status/Output Text Box
+                    verbatimTextOutput('contents'),
+                    tableOutput('tabledata'),
                    
+                    br(),
+                    HTML("<center><h3>Why is This of Interest to This Project?</h3></center>"),
+                    br(),
+                    p(style="text-indent: 40px", "Ideally, as this project develops, the third phase will look at applying to grants that would enable to purchase of a friction extrusion machine--such as the \"FE100\" and its associated tooling, offered by Bond Technologies--which could be used at a metals-focused MRF. The machine could be used with aluminum to produce uniform, high-quality extrudates (with better mechanical properties) that could be reused in the domestic economy."),
+                    br(),
+                    p(style="text-indent: 40px", "The friction extrusion machine can use powder, scrap, or billets to produce these aluminum extrudates, and since it uses severe plastic deformation in place of melting, the amount of emissions produced is negligble.")
+)
+
             ),
             
             tabItem(tabName = "Calendar",
@@ -244,8 +297,27 @@ server <- function(input, output, session) {
     #========================================================================================================
     #=================== CO2 Calculations Section -- START ==================================================
     
+  datasetInput_1 <- reactive({  
+   
+    # Info. on aluminum which can be created:
+    tons_of_AL_possible <- (input$m_bauxite) / (input$u_bauxite)
+   
+    associated_emissions <- tons_of_AL_possible * 11.7
+    associated_emissions <- data.frame(associated_emissions)
+    names(associated_emissions)<- "Associated emissions (in metric tons): "
+    print(associated_emissions)
+   
+  })
+ 
+ 
 
-    
+ 
+  #  Outputting results when button clicked:
+  output$tabledata <- renderTable({
+    if (input$submitbutton>0) {
+      isolate(datasetInput_1())
+    }
+  })
     
     #=================== CO2 Calculations Section Section -- END ============================================
     #========================================================================================================
