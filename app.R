@@ -236,7 +236,26 @@ ui <- dashboardPage(
             ),
             
             tabItem(tabName = "RecycleStats",
-                    
+        
+ HTML("<center><h2>Exploring the Scrap Aluminum Exports Market of the Philippines</h4></center>"),
+                    br(), 
+                    p(style="text-indent: 40px;", "Both data visualizations below were developed using the datasets available through OEC.world's profile for the Philippines. The Observatory of Economic Complexity's profile for the Philippines can be viewed at: "),
+                    br(), 
+                    HTML("<center><strong><a href='https://oec.world/en/profile/country/phl'>Philippines OEC Profile</a></strong></center>"),
+                    br(), 
+                    br(), 
+                    p(style="text-indent: 40px;", "The treemap below was generated using data for the most recent year that OEC.world had on hand for scrap aluminum exports from the Philippines; for 2022, the export value totalled $111,000,000 (USD)."), 
+                    p(style="text-indent: 40px;", "Each 'block' in the treegraph is color-coded with a specific country, and the size of the country's block is indicative of the total value of scrap aluminum it purchased / imported from the Philippines. Hover over the blocks to see the respective value of scrap aluminum that each company imported from the Philippines in 2022."), 
+                    br(), 
+                    fluidRow(),  
+                    girafeOutput("scrap_treemap"), 
+                    br(), 
+                    br(), 
+                    p(style="text-indent: 40px;", "The interactive scatterplot below was generated with data obtained from OEC.world; datsets showing the exports of aluminum scrap from the Philippines to other countries over the period of 1995 to 2022 (the most recently avaliable data) were filtered and combined."), 
+                    p(style="text-indent: 40px;", "Try hovering over the scatterpoints to see the respective values; countries in the legend can be clicked 'on' or 'off' to improve readability."), 
+                    br(), 
+                    plotlyOutput("al_exports_scatterplot")
+        
             ),
             
             tabItem(tabName = "P1Costs",
