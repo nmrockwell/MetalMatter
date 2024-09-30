@@ -479,7 +479,7 @@ server <- function(input, output, session) {
       p <- ggplotly(, tooltip = c("text"))
       p
  
-    
+  })  
 
     
     
