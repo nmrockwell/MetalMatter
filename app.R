@@ -438,7 +438,32 @@ server <- function(input, output, session) {
     
     # *********************************************************************************************************
     
-
+```{r}
+  sp_df <- as.data.frame(read.csv("D://MetalMatterApp//Scatterplot_OEC_Data//export_aggregate_cleaned.csv", header=TRUE, sep=","))
+```{r}
+   output$al_exports_scatterplot <- renderPlotly({
+      p <- ggplot(data = sp_df, 
+                          mapping = aes(x = sp_df$Year, 
+                                        y = sp_df$Export.Trade.Value..in.MMs.of.dollars., 
+                                        group = 1, 
+                                        text = paste('</br>Country: ', sp_df$Country, 
+                                                     '</br>Year: ', sp_df$Year, 
+                                                     '</br>Export Value in $MM (USD): ', sp_df$Export.Trade.Value..in.MMs.of.dollars.))) + 
+        geom_point(alpha = 0.8, size = 1, aes(color = sp_df$Country)) +
+        geom_line(alpha = 0.2, size = 0.5, aes(color = sp_df$Country)) + 
+        theme(text = element_text(family = "Kinnari"), 
+              plot.title = element_text(colour = "gray48", face = "bold", family = "Kinnari", size = 18),
+              axis.title = element_text(colour = "grey50", face = "bold", family = "Kinnari"), 
+              panel.background = element_rect(fill = "seashell2")) + 
+        xlab('Export Year') +
+        ylab('Export Value in $MM (USD)') +
+        labs(color = "Countries Importing Aluminum Scrap from The Philippines") + 
+        ggtitle('Value of Scrap Aluminum Exports from The Philippines, 1995-2022') 
+      
+      p <- ggplotly(, tooltip = c("text"))
+      p
+  })
+```
     
 
     
