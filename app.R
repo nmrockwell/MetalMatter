@@ -391,6 +391,47 @@ server <- function(input, output, session) {
     #========================================================================================================
     #=================== Treemap + Scatterplot Visualization -- START =======================================
     
+```{r}
+  # Import the treemap spreadsheet:    
+  tm_df <-as.data.frame(read.csv(file="D://MetalMatterApp//Treemap_OEC_Data//tm_df.csv", header=TRUE, sep=","))
+  
+  
+  # Manually build treemap layout:
+  treemap <- treemapify(tm_df, area = "Scrap_Aluminum_Value")
+  treemap <- left_join(treemap, tm_df)
+  
+  # Adding a title for the treemap:
+  treemap_title <- "Scrap Aluminum Exports from The Philippines to Other Countries, in $MM (USD) for 2022"
+
+```
+```{r}
+  # Build ggplot2 treemap object
+  plot <- ggplot(treemap, aes(
+    area = Scrap_Aluminum_Value,
+    fill = Countries,
+    xmin = xmin,
+    xmax = xmax,
+    ymin = ymin,
+    ymax = ymax,
+    tooltip = Scrap_Aluminum_Value,
+    label = Countries
+  )) +
+    labs(title = str_wrap(treemap_title, 50)) +
+    theme(text = element_text(family = "Kinnari"), 
+          plot.title = element_text(hjust = 0.5, colour = "gray48", face = "bold", family = "Kinnari", size = 10), 
+          panel.background = element_rect(fill = "seashell2")) +
+    geom_treemap() +
+    geom_treemap_text(aes(family ="Kinnari"), color="white") +
+    geom_rect_interactive(alpha = 0.1) +
+    scale_x_continuous(expand = c(0, 0)) +
+    scale_y_continuous(expand = c(0, 0)) +
+    theme(axis.text = element_blank(), axis.ticks = element_blank())
+
+```
+```{r}
+  # Draw with ggiraph
+  output$scrap_treemap <- renderGirafe(girafe(code = print(plot)))
+```
 
     
     
