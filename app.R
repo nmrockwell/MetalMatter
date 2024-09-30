@@ -391,7 +391,7 @@ server <- function(input, output, session) {
     #========================================================================================================
     #=================== Treemap + Scatterplot Visualization -- START =======================================
     
-```{r}
+
   # Import the treemap spreadsheet:    
   tm_df <-as.data.frame(read.csv(file="D://MetalMatterApp//Treemap_OEC_Data//tm_df.csv", header=TRUE, sep=","))
   
@@ -403,8 +403,7 @@ server <- function(input, output, session) {
   # Adding a title for the treemap:
   treemap_title <- "Scrap Aluminum Exports from The Philippines to Other Countries, in $MM (USD) for 2022"
 
-```
-```{r}
+
   # Build ggplot2 treemap object
   plot <- ggplot(treemap, aes(
     area = Scrap_Aluminum_Value,
@@ -427,20 +426,18 @@ server <- function(input, output, session) {
     scale_y_continuous(expand = c(0, 0)) +
     theme(axis.text = element_blank(), axis.ticks = element_blank())
 
-```
-```{r}
+
   # Draw with ggiraph
   output$scrap_treemap <- renderGirafe(girafe(code = print(plot)))
-```
+
 
     
     
     
     # *********************************************************************************************************
-    
-```{r}
+
   sp_df <- as.data.frame(read.csv("D://MetalMatterApp//Scatterplot_OEC_Data//export_aggregate_cleaned.csv", header=TRUE, sep=","))
-```{r}
+
    output$al_exports_scatterplot <- renderPlotly({
       p <- ggplot(data = sp_df, 
                           mapping = aes(x = sp_df$Year, 
@@ -462,8 +459,7 @@ server <- function(input, output, session) {
       
       p <- ggplotly(, tooltip = c("text"))
       p
-  })
-```
+ 
     
 
     
